@@ -37,8 +37,8 @@ const App = () => {
     setCurrentProduct(null);
   };
 
-  const handleEdit = (product) => {
-    setCurrentProduct(product);
+  const handleEdit = async (product) => {
+    await setCurrentProduct(product);
   };
 
   const handleDelete = async (id) => {
