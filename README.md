@@ -78,4 +78,4 @@ To set up and run this project locally, follow these steps:
 
 ## UI
 
-    ![alt text](./src/assets/uiImage.png)
+    ![alt text](C:\Users\devan\OneDrive\Desktop\Webito Internship\React_Learn\CRUD_App_API_React\src\assets\uiImage.png)
