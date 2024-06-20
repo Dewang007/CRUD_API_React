@@ -81,4 +81,4 @@ src/
 
 ## UI
 
-    ![alt text](https://github.com/Dewang007/CRUD_API_React/blob/main/src/assets/uiImage.png)
+![alt text](https://github.com/Dewang007/CRUD_API_React/blob/main/src/assets/uiImage.png)
