@@ -75,3 +75,7 @@ To set up and run this project locally, follow these steps:
 │ └── productsReducer.js
 └── store.js
 ```
+
+## UI
+
+    ![A beautiful sunset](https://example.com/sunset.jpg)
