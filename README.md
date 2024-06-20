@@ -80,4 +80,4 @@ To set up and run this project locally, follow these steps:
 
     ![A beautiful sunset](https://example.com/sunset.jpg)
 
-    ![alt text](image.png)
+    ![alt text](./src/assets/uiImage.png)
