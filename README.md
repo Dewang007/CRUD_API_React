@@ -78,4 +78,4 @@ To set up and run this project locally, follow these steps:
 
 ## UI
 
-    ![alt text](uiImage.png)
+    ![alt text](./src/assets/uiImage.png)
