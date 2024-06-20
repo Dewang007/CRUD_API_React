@@ -36,8 +36,8 @@ To set up and run this project locally, follow these steps:
 1.  **Clone the Repository:**
 
     ```
-    git clone <repository_url>
-    cd <repository_name>
+    git clone `https://github.com/Dewang007/CRUD_API_React.git`
+    cd `CRUD_API_React`
     ```
 
 2.  **Install Dependencies:**
@@ -62,9 +62,7 @@ To set up and run this project locally, follow these steps:
 
 ## File Structure
 
-    ```
-
-src/
+```src/
 │
 ├── api.js
 ├── App.jsx
@@ -76,5 +74,4 @@ src/
 │ ├── productsSlice.js
 │ └── productsReducer.js
 └── store.js
-
 ```
