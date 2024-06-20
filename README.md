@@ -79,3 +79,5 @@ To set up and run this project locally, follow these steps:
 ## UI
 
     ![A beautiful sunset](https://example.com/sunset.jpg)
+
+    ![alt text](image.png)
