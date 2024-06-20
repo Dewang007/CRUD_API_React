@@ -62,8 +62,11 @@ To set up and run this project locally, follow these steps:
 
 ## File Structure
 
-```src/
-│
+```
+src/
+|
+├──assets
+|   └──uiImage.png
 ├── api.js
 ├── App.jsx
 ├── components/
@@ -78,4 +81,4 @@ To set up and run this project locally, follow these steps:
 
 ## UI
 
-    ![alt text](C:\Users\devan\OneDrive\Desktop\Webito Internship\React_Learn\CRUD_App_API_React\src\assets\uiImage.png)
+    ![alt text](https://github.com/Dewang007/CRUD_API_React/blob/main/src/assets/uiImage.png)
