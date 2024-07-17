@@ -29,6 +29,6 @@ export const updateProduct = async (id, product) => {
 };
 
 export const deleteProduct = async (id) => {
-  const response = await axios.delete(`${fakeApiUrl}/${id}`);
+  const response = await axios.delete(`${conf.fakeApiUrl}/${id}`);
   return response.data;
 };

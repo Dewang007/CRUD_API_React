@@ -1,18 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import TableContainer from "@mui/material/TableContainer";
+import Paper from "@mui/material/Paper";
+import Stack from "@mui/material/Stack";
+import Pagination from "@mui/material/Pagination";
 
 const List = ({ products, onEdit, onDelete }) => {
+  const [page, setPage] = useState(1);
+  const productsPerPage = 1;
+
+  const handleChange = (e, value) => {
+    setPage(value);
+  };
+
+  const indexOfLastProduct = page * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = products.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+
   return (
-    <div className="p-4 bg-gray-800 rounded-lg">
-      {products.map((product) => (
-        <div
-          key={product.id}
-          className="flex items-center justify-between p-4 mb-2 bg-gray-700 rounded-lg"
-        >
-          <div>
-            <h3 className="text-white font-bold">{product.title}</h3>
-            <p className="text-gray-300">{product.description}</p>
-            <p className="text-gray-300">Price: {product.price}</p>
-            <p className="text-gray-300">Category: {product.category}</p>
+    <div className="p-4 bg-slate-100 rounded-lg">
+      {currentProducts.map((product) => (
+        <TableContainer key={product.id} component={Paper}>
+          <div className="m-5">
+            <Typography color={"black"} variant="h6" gutterBottom>
+              {product.title}
+            </Typography>
+            <Typography color={"black"} variant="body1" gutterBottom>
+              {product.description}
+            </Typography>
+            <Typography color={"black"} variant="body1" gutterBottom>
+              Price: {"$" + product.price}
+            </Typography>
+            <Typography color={"black"} variant="body1" gutterBottom>
+              Category: {product.category}
+            </Typography>
             <img
               src={product.image}
               alt={product.title}
@@ -20,22 +45,36 @@ const List = ({ products, onEdit, onDelete }) => {
             />
           </div>
 
-          <div className="flex items-center">
-            <button
-              onClick={() => onEdit(product)}
-              className="p-2 bg-blue-500 text-white rounded mr-2"
-            >
-              Edit
-            </button>
-            <button
-              onClick={() => onDelete(product.id)}
-              className="p-2 bg-red-500 text-white rounded"
-            >
-              Delete
-            </button>
+          <div className="p-4 flex items-center">
+            <Stack direction="row" spacing={2}>
+              <Button
+                onClick={() => onEdit(product)}
+                className="text-white rounded mr-2"
+                variant="outlined"
+              >
+                Edit
+              </Button>
+
+              <Button
+                onClick={() => onDelete(product.id)}
+                variant="outlined"
+                color="error"
+                className="text-white rounded"
+              >
+                Delete
+              </Button>
+            </Stack>
           </div>
-        </div>
+        </TableContainer>
       ))}
+      <div className="mt-4 flex justify-center">
+        <Pagination
+          count={Math.ceil(products.length / productsPerPage)}
+          page={page}
+          onChange={handleChange}
+          color="primary"
+        />
+      </div>
     </div>
   );
 };

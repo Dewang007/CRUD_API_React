@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import Grid from "@mui/material/Grid";
 import Form from "./components/Form";
 import List from "./components/List";
 import {
@@ -48,22 +48,18 @@ const App = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gray-900 text-gray-200">
-        <div className="container mx-auto py-8 px-4">
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <Form onSave={handleSave} currentProduct={currentProduct} />
-            </div>
-            <div className="h-screen overflow-y-auto">
-              <List
-                products={products}
-                onEdit={handleEdit}
-                onDelete={handleDelete}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <Grid container spacing={1}>
+        <Grid item xs={12} sm={6}>
+          <Form onSave={handleSave} currentProduct={currentProduct} />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <List
+            products={products}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
+          />
+        </Grid>
+      </Grid>
     </>
   );
 };

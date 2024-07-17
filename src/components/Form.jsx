@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import TableContainer from "@mui/material/TableContainer";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
 
 const Form = ({ onSave, currentProduct }) => {
   const [form, setForm] = useState({
-    title: '',
-    price: '',
-    description: '',
-    category: '',
-    image: ''
+    title: "",
+    price: "",
+    description: "",
+    category: "",
+    image: "",
   });
 
   useEffect(() => {
@@ -23,68 +28,103 @@ const Form = ({ onSave, currentProduct }) => {
     e.preventDefault();
     onSave(form);
     setForm({
-      title: '',
-      price: '',
-      description: '',
-      category: '',
-      image: ''
+      title: "",
+      price: "",
+      description: "",
+      category: "",
+      image: "",
     });
   };
 
   return (
-    <form className="p-4 bg-gray-800 rounded-lg sticky top-0" onSubmit={handleSubmit}>
-      <div className="mb-4">
-        <label className="block text-white mb-2">Title</label>
-        <input
-          type="text"
-          name="title"
-          value={form.title}
-          onChange={handleChange}
-          className="text-black w-full p-2 border rounded"
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block text-white mb-2">Price</label>
-        <input
-          type="text"
-          name="price"
-          value={form.price}
-          onChange={handleChange}
-          className="text-black w-full p-2 border rounded"
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block text-white mb-2">Description</label>
-        <input
-          type="text"
-          name="description"
-          value={form.description}
-          onChange={handleChange}
-          className="text-black w-full p-2 border rounded"
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block text-white mb-2">Category</label>
-        <input
-          type="text"
-          name="category"
-          value={form.category}
-          onChange={handleChange}
-          className="text-black w-full p-2 border rounded"
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block text-white mb-2">Image URL</label>
-        <input
-          type="text"
-          name="image"
-          value={form.image}
-          onChange={handleChange}
-          className="text-black w-full p-2 border rounded"
-        />
-      </div>
-      <button type="submit" className="w-full p-2 bg-gray-600 text-white rounded">Save</button>
-    </form>
+    <TableContainer component={Paper}>
+      <form
+        className="p-4 bg-slate-100 rounded-lg sticky top-0"
+        onSubmit={handleSubmit}
+      >
+        <Grid container spacing={2}>
+          {/* <div className="mb-4"> */}
+          <Grid item xs={12} sm={6}>
+            <TextField
+              type="text"
+              name="title"
+              value={form.title}
+              onChange={handleChange}
+              id="outlined-basic"
+              label="Title"
+              variant="outlined"
+              fullWidth
+            />
+          </Grid>
+          {/* </div> */}
+          {/* <div className="mb-4"> */}
+          <Grid item xs={12} sm={6}>
+            <TextField
+              type="text"
+              name="price"
+              value={form.price}
+              onChange={handleChange}
+              id="outlined-basic"
+              label="Price"
+              variant="outlined"
+              fullWidth
+            />
+          </Grid>
+          {/* </div> */}
+          {/* <div className="mb-4"> */}
+          <Grid item xs={12} sm={12}>
+            <TextField
+              type="text"
+              name="description"
+              value={form.description}
+              onChange={handleChange}
+              id="outlined-basic"
+              // label="description"
+              placeholder="Brief description about your product"
+              variant="outlined"
+              fullWidth
+              multiline
+              // rows={5}
+            />
+          </Grid>
+          {/* </div> */}
+          {/* <div className="mb-4"> */}
+          <Grid item xs={12} sm={6}>
+            <TextField
+              type="text"
+              name="category"
+              value={form.category}
+              onChange={handleChange}
+              id="outlined-basic"
+              label="category"
+              variant="outlined"
+              fullWidth
+              
+            />
+          </Grid>
+          {/* </div>
+          <div className="mb-4"> */}
+          <Grid item xs={12} sm={6}>
+            <TextField
+              type="text"
+              name="image"
+              value={form.image}
+              onChange={handleChange}
+              id="outlined-basic"
+              label="Image URL"
+              variant="outlined"
+              fullWidth
+            />
+          </Grid>
+          {/* </div> */}
+          <Grid item xs={12} sm={12}>
+            <Button fullWidth type="submit" variant="contained" color="success">
+              Save
+            </Button>
+          </Grid>
+        </Grid>
+      </form>
+    </TableContainer>
   );
 };
 
