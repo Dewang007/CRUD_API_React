@@ -44,7 +44,6 @@ const List = ({ products, onEdit, onDelete }) => {
               className="mt-1 w-24 h-24 object-cover"
             />
           </div>
-
           <div className="p-4 flex items-center">
             <Stack direction="row" spacing={2}>
               <Button
@@ -54,7 +53,6 @@ const List = ({ products, onEdit, onDelete }) => {
               >
                 Edit
               </Button>
-
               <Button
                 onClick={() => onDelete(product.id)}
                 variant="outlined"

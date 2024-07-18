@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import TableContainer from "@mui/material/TableContainer";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
+import useStyles from "../useStyle/FormStyles";
 
 const Form = ({ onSave, currentProduct }) => {
   const [form, setForm] = useState({
@@ -13,7 +14,6 @@ const Form = ({ onSave, currentProduct }) => {
     category: "",
     image: "",
   });
-
   useEffect(() => {
     if (currentProduct) {
       setForm(currentProduct);
@@ -36,15 +36,15 @@ const Form = ({ onSave, currentProduct }) => {
     });
   };
 
+  const { classes } = useStyles();
+
   return (
     <TableContainer component={Paper}>
-      <form
-        className="p-4 bg-slate-100 rounded-lg sticky top-0"
-        onSubmit={handleSubmit}
-      >
-        <Grid container spacing={2}>
+      <form className={classes.formContainer} onSubmit={handleSubmit}>
+        <Grid container spacing={2} className={classes.gridContainer}>
           <Grid item xs={12} sm={6}>
             <TextField
+              className={classes.textField}
               type="text"
               name="title"
               value={form.title}
@@ -57,6 +57,7 @@ const Form = ({ onSave, currentProduct }) => {
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
+              className={classes.textField}
               type="text"
               name="price"
               value={form.price}
@@ -69,21 +70,21 @@ const Form = ({ onSave, currentProduct }) => {
           </Grid>
           <Grid item xs={12} sm={12}>
             <TextField
+              className={classes.descriptionField}
               type="text"
               name="description"
               value={form.description}
               onChange={handleChange}
               id="outlined-basic"
-              // label="description"
               placeholder="Brief description about your product"
               variant="outlined"
               fullWidth
               multiline
-              // rows={5}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
+              className={classes.textField}
               type="text"
               name="category"
               value={form.category}
@@ -92,11 +93,11 @@ const Form = ({ onSave, currentProduct }) => {
               label="category"
               variant="outlined"
               fullWidth
-              
             />
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
+              className={classes.textField}
               type="text"
               name="image"
               value={form.image}
@@ -108,7 +109,13 @@ const Form = ({ onSave, currentProduct }) => {
             />
           </Grid>
           <Grid item xs={12} sm={12}>
-            <Button fullWidth type="submit" variant="contained" color="success">
+            <Button
+              className={classes.submitButton}
+              fullWidth
+              type="submit"
+              variant="contained"
+              color="success"
+            >
               Save
             </Button>
           </Grid>
