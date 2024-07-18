@@ -43,7 +43,6 @@ const Form = ({ onSave, currentProduct }) => {
         onSubmit={handleSubmit}
       >
         <Grid container spacing={2}>
-          {/* <div className="mb-4"> */}
           <Grid item xs={12} sm={6}>
             <TextField
               type="text"
@@ -56,8 +55,6 @@ const Form = ({ onSave, currentProduct }) => {
               fullWidth
             />
           </Grid>
-          {/* </div> */}
-          {/* <div className="mb-4"> */}
           <Grid item xs={12} sm={6}>
             <TextField
               type="text"
@@ -70,8 +67,6 @@ const Form = ({ onSave, currentProduct }) => {
               fullWidth
             />
           </Grid>
-          {/* </div> */}
-          {/* <div className="mb-4"> */}
           <Grid item xs={12} sm={12}>
             <TextField
               type="text"
@@ -87,8 +82,6 @@ const Form = ({ onSave, currentProduct }) => {
               // rows={5}
             />
           </Grid>
-          {/* </div> */}
-          {/* <div className="mb-4"> */}
           <Grid item xs={12} sm={6}>
             <TextField
               type="text"
@@ -102,8 +95,6 @@ const Form = ({ onSave, currentProduct }) => {
               
             />
           </Grid>
-          {/* </div>
-          <div className="mb-4"> */}
           <Grid item xs={12} sm={6}>
             <TextField
               type="text"
@@ -116,7 +107,6 @@ const Form = ({ onSave, currentProduct }) => {
               fullWidth
             />
           </Grid>
-          {/* </div> */}
           <Grid item xs={12} sm={12}>
             <Button fullWidth type="submit" variant="contained" color="success">
               Save
